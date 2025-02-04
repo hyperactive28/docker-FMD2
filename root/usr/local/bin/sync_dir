@@ -10,7 +10,7 @@ monitor_changes() {
 				*"${file}"*)
 					;;
 				*)
-					rsync -av "$file" "$2/$(basename "$(dirname "$file")")/"
+					rsync --inplace --no-times -av "$file" "$2/$(basename "$(dirname "$file")")/"
 					copied_files="${copied_files}${file}
 "
 					;;
